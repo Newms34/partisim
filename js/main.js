@@ -85,7 +85,7 @@ class Particle {
         if (this.x + this.dx - this.m < 0) {
             //too left
             this.dx = Math.abs(this.dx);
-            this.x = 0;
+            this.x = 1;
         } else if (this.x + this.dx + this.m > m.w) {
             //too right
             outsideRange = { x: this.x, y: this.y, newX: null, newY: null }
@@ -97,7 +97,7 @@ class Particle {
         if (this.y + this.dy - this.m < 0) {
             //too up
             this.dy = Math.abs(this.dy);
-            this.y = 0;
+            this.y = 1;
         } else if (this.y + this.dy + this.m > m.h) {
             //too down
             outsideRange = { x: this.x, y: this.y, newX: null, newY: null }
@@ -271,7 +271,7 @@ if (defVals) {
     minMass = 1;
     sunMass = 20;
     maxMass = 3
-    gFric = 1;
+    gFric = 0.5;
 } else {
     g = Number(prompt('Enter Gravitational Constant. We recommend around 5-15.'));
     num = Number(prompt('Enter number of particles. 5-100 is probly a safe bet!'));
